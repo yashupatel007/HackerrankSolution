@@ -1,0 +1,16 @@
+
+vector<int> jimOrders(vector<vector<int>> orders) {
+    vector<pair<int,int>>ans;
+    int n=orders.size();
+    for(int i=0;i<n;i++){
+        int tt=orders[i][0]+orders[i][1]; // add vector ke ander vector wale elements
+        ans.push_back({tt,i+1}); // ans me bhejo pair ke syntax ke through
+    }
+    sort(ans.begin(),ans.end());
+    vector<int>result;
+    for(auto& p:ans){ // access all the elements of ans
+        result.push_back(p.second); // result me push back karte raho
+    }
+    return result;
+
+}
